@@ -12,14 +12,15 @@ func element() {
 }
 
 func Tablize() {
-	fmt.Print("  ")
+	var ll string = ""
+	fmt.Printf("%5s ", ll)
 	for i := 0; i < container.Width; i++ {
 		fmt.Print("    ")
 		fmt.Print(i + 1)
 		fmt.Print("   ")
 	}
 	fmt.Println()
-	fmt.Print("   ")
+	fmt.Printf("%5s  ", ll)
 	for i := 0; i < container.Width; i++ {
 		for j := 0; j < 8; j++ {
 			if i+1 == container.Width {
@@ -32,13 +33,12 @@ func Tablize() {
 		}
 	}
 	fmt.Println()
-
 	for i := 0; i < len(container.State_Array); i++ {
 		for z := 0; z < 3; z++ {
 			if z == 1 {
-				fmt.Printf("%v |", i+1)
+				fmt.Printf("%5v |", i+1)
 			} else {
-				fmt.Print("  |")
+				fmt.Printf("%5s |", ll)
 			}
 
 			for w := 0; w < len(container.State_Array[i]); w++ {
